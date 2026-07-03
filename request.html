@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request Ambulance</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+header{
+    background:#002b5b;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.container{
+    width:50%;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.15);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#002b5b;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    background:#d40000;
+    color:white;
+    border:none;
+    padding:15px;
+    margin-top:25px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#b00000;
+}
+
+.back-btn{
+    background:#002b5b;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>🚑 Ambulance Request Form</h1>
+</header>
+
+<div class="container">
+
+<h2>Request Ambulance</h2>
+
+<form action="success.html">
+
+<label>Patient Name</label>
+<input type="text" placeholder="Enter Patient Name" required>
+
+<label>Mobile Number</label>
+<input type="tel"
+       placeholder="Enter Mobile Number"
+       pattern="[0-9]{10}"
+       required>
+
+<label>Pickup Location</label>
+<textarea rows="3"
+          placeholder="Enter Address"
+          required></textarea>
+
+<label>Emergency Type</label>
+<select required>
+    <option value="">Select Emergency Type</option>
+    <option>Accident</option>
+    <option>Heart Attack</option>
+    <option>Pregnancy Emergency</option>
+    <option>General Emergency</option>
+</select>
+
+<label>Hospital Preference</label>
+<input type="text"
+       placeholder="Preferred Hospital"
+       required>
+
+<button type="submit">
+Submit Request
+</button>
+
+</form>
+
+<br>
+
+<a href="index.html">
+    <button class="back-btn">
+        Back To Home
+    </button>
+</a>
+
+</div>
+
+</body>
+</html>
