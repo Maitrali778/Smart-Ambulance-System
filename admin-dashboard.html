@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="admin-dashboard">
+
+<h1>Dashboard</h1>
+
+<!-- CARDS -->
+<div class="admin-cards">
+
+<div class="admin-card">
+<h3>Total Bookings</h3>
+<h2 id="totalBookings">18</h2>
+</div>
+
+<div class="admin-card">
+<h3>Available Ambulances</h3>
+<h2>5</h2>
+</div>
+
+<div class="admin-card">
+<h3>Drivers</h3>
+<h2>8</h2>
+</div>
+
+<div class="admin-card">
+<h3>Hospitals</h3>
+<h2>6</h2>
+</div>
+
+</div>
+
+<!-- TABLE -->
+<h2 class="table-title">Recent Ambulance Requests</h2>
+
+<table>
+
+<tr>
+<th>Patient</th>
+<th>Location</th>
+<th>Ambulance</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>Rahul Sharma</td>
+<td>Andheri</td>
+<td>ICU Ambulance</td>
+<td><span class="status pending">Pending</span></td>
+<td><button class="assign-btn">Assign</button></td>
+</tr>
+
+<tr>
+<td>Priya Patil</td>
+<td>Dadar</td>
+<td>Basic Ambulance</td>
+<td><span class="status active">On The Way</span></td>
+<td><button class="view-btn">View</button></td>
+</tr>
+
+<tr>
+<td>Aman Khan</td>
+<td>Bandra</td>
+<td>Oxygen Ambulance</td>
+<td><span class="status completed">Completed</span></td>
+<td><button class="view-btn">View</button></td>
+</tr>
+
+</table>
+
+</div>
+
+</body>
+</html>

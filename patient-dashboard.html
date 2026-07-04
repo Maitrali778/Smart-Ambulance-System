@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Patient Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+</head>
+
+<body>
+
+<div class="patient-dashboard">
+
+<div class="dashboard-header">
+
+<h2>Patient Dashboard</h2>
+
+<p>Welcome</p>
+
+<h3 id="liveStatus" style="color:red;">
+    🔴 LIVE
+</h3>
+</div>
+
+<div class="dashboard-cards">
+
+<div class="card">
+
+<h3>Booking Status</h3>
+
+<h2 style="color:#1E9E5A;">On The Way 🚑</h2>
+
+<p id="eta">Estimated Arrival : 8 Minutes</p>
+
+</div>
+
+<div class="card">
+
+<h3>Tracking ID</h3>
+
+<h2>AMS10254</h2>
+
+<p>Track your ambulance anytime.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Emergency Contact</h3>
+
+<h2>1800-123-4567</h2>
+
+<p>24 × 7 Emergency Support</p>
+
+</div>
+
+</div>
+
+<div class="patient-actions">
+
+<button class="action-btn" onclick="startTracking()">
+    Track Ambulance
+</button>
+
+<a href="booking-history.html">
+    <button class="action-btn">
+        Booking History
+    </button>
+</a>
+
+<a href="#">
+<button class="action-btn" onclick="cancelBooking()">
+Cancel Booking
+</button>
+</a>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+</div>
+
+<div id="map"
+style="height:400px;display:none;margin-top:20px;">
+</div>
+
+</div>
+
+<script>
+function cancelBooking() {
+    let confirmCancel = confirm("Do you really want to cancel the booking?");
+
+    if (confirmCancel) {
+        alert("Your Ambulance booking has been cancelled successfully.");
+        
+        // optional UI change (demo feel)
+        document.querySelector(".status").innerText = "Cancelled";
+        document.querySelector(".status").style.background = "#ffd6d6";
+        document.querySelector(".status").style.color = "#b30000";
+    } 
+    else {
+        alert("✅ Your booking is still active.");
+    }
+}
+</script>
+<script>
+
+function cancelBooking() {
+    let confirmCancel = confirm("Do you really want to cancel the booking?");
+
+    if (confirmCancel) {
+        alert("Your Ambulance booking has been cancelled successfully.");
+
+        document.querySelector(".status").innerText = "Cancelled";
+        document.querySelector(".status").style.background = "#ffd6d6";
+        document.querySelector(".status").style.color = "#b30000";
+    } 
+    else {
+        alert("Your booking is still active.");
+    }
+}
+
+
+// 🚑 TRACK AMBULANCE FUNCTION (ADD THIS)
+function trackAmbulance() {
+    let statusCard = document.querySelector(".card h2");
+
+    statusCard.innerText = "Tracking Live 🚑";
+    statusCard.style.color = "#007bff";
+
+    alert("Ambulance tracking started!");
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+<script>let map;
+let marker;
+
+let moveLat = 0.0002;
+let moveLng = 0.0002;
+
+function startTracking() {
+
+    document.getElementById("map").style.display = "block";
+
+    navigator.geolocation.watchPosition((position) => {
+
+        let lat = position.coords.latitude;
+        let lng = position.coords.longitude;
+
+        // map init only once
+        if (!map) {
+            map = L.map('map').setView([lat, lng], 15);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            let ambulanceIcon = L.icon({
+    iconUrl: "track.png",
+    iconSize: [45, 45],
+    iconAnchor: [22, 22]
+});
+
+            marker = L.marker([lat, lng], { icon: ambulanceIcon }).addTo(map);
+            setInterval(() => {
+
+    lat += moveLat;
+    lng += moveLng;
+
+    marker.setLatLng([lat, lng]);
+    map.panTo([lat, lng]);
+
+}, 1500);
+        }
+
+        // live movement
+        marker.setLatLng([lat, lng]);
+        map.setView([lat, lng]);
+
+        console.log("Live Location:", lat, lng);
+
+    }, (error) => {
+        alert("Location access denied");
+    });
+
+    alert("🚑 Live Tracking Started");
+}</script>
+<script>setInterval(() => {
+    let el = document.getElementById("trackingStatus");
+    if (el) {
+        el.style.opacity = el.style.opacity === "0" ? "1" : "0";
+    }
+}, 500)</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>setInterval(() => {
+
+    let live = document.getElementById("liveStatus");
+
+    if (live.style.visibility === "hidden") {
+        live.style.visibility = "visible";
+    } else {
+        live.style.visibility = "hidden";
+    }
+
+}, 500);</script>
+<script>let time = 8;
+
+setInterval(() => {
+
+    if (time > 1) {
+        time--;
+        document.getElementById("eta").innerHTML =
+            "Estimated Arrival : " + time + " Minutes";
+    } else {
+        document.getElementById("eta").innerHTML =
+            "🚑 Ambulance has arrived!";
+    }
+
+}, 5000);</script>
+<script>let ambulanceIcon = L.icon({
+    iconUrl: "track.png",
+    iconSize: [45, 45],
+    iconAnchor: [22, 22]
+});
+
+marker = L.marker([lat, lng], { icon: ambulanceIcon }).addTo(map);</script>
+</body>
+</html>

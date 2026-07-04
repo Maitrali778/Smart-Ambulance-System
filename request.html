@@ -76,6 +76,50 @@ button:hover{
     background:#002b5b;
 }
 
+.city-container,
+.type-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    margin:25px 0;
+}
+
+.city-card,
+.type-card{
+    width:110px;
+    min-width:110px;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+    cursor:pointer;
+    transition:.3s;
+    text-align:center;
+}
+
+.city-card img,
+.type-card img{
+    width:100%;
+    height:70px;
+    object-fit:cover;
+    display:block;
+}
+
+.city-card h3,
+.type-card h3{
+    padding:8px;
+    font-size:15px;
+    color:#002b5b;
+}
+
+.city-card:hover,
+.type-card:hover{
+    transform:translateY(-5px);
+}
+
 </style>
 
 </head>
@@ -86,10 +130,71 @@ button:hover{
 </header>
 
 <div class="container">
+    <h2>Select Your City</h2>
+
+<div class="city-container">
+
+<div class="city-card" onclick="selectCity(this,'Mumbai')">
+    <img src="mumbai.png">
+    <h3>Mumbai</h3>
+</div>
+
+<div class="city-card" onclick="selectCity(this,'Pune')">
+    <img src="pune.png">
+    <h3>Pune</h3>
+</div>
+
+<div class="city-card" onclick="selectCity(this,'Delhi')">
+    <img src="delhi.png">
+    <h3>Delhi</h3>
+</div>
+
+<div class="city-card" onclick="selectCity(this,'Bangalore')">
+    <img src="bangalore.png">
+    <h3>Bangalore</h3>
+</div>
+
+<div class="city-card" onclick="selectCity(this,'Hyderabad')">
+    <img src="hyderabad.png">
+    <h3>Hyderabad</h3>
+</div>
+
+</div>
+<h2>Select Ambulance Type</h2>
+
+<div class="type-container">
+
+<div class="type-card" onclick="selectAmbulance(this,'Basic Ambulance')">
+<img src="basic.png">
+<h3>Basic</h3>
+</div>
+
+<div class="type-card" onclick="selectAmbulance(this,'ICU Ambulance')">
+<img src="icu.png">
+<h3>ICU</h3>
+</div>
+
+<div class="type-card" onclick="selectAmbulance(this,'Boat Ambulance')">
+<img src="boat.png">
+<h3>Boat</h3>
+</div>
+
+<div class="type-card" onclick="selectAmbulance(this,'Air Ambulance')">
+<img src="air.png">
+<h3>Air</h3>
+</div>
+
+</div>
 
 <h2>Request Ambulance</h2>
 
 <form action="success.html">
+
+<label>Selected City</label>
+<input type="text" id="selectedCity" readonly>
+
+<label>Selected Ambulance</label>
+<input type="text" id="selectedAmbulance" readonly>
 
 <label>Patient Name</label>
 <input type="text" placeholder="Enter Patient Name" required>
@@ -106,6 +211,7 @@ button:hover{
           required></textarea>
 
 <label>Emergency Type</label>
+
 <select required>
     <option value="">Select Emergency Type</option>
     <option>Accident</option>
@@ -134,6 +240,32 @@ Submit Request
 </a>
 
 </div>
+<script>
 
+function selectCity(card, city){
+
+document.querySelectorAll(".city-card").forEach(c=>{
+c.classList.remove("active");
+});
+
+card.classList.add("active");
+
+document.getElementById("selectedCity").value=city;
+
+}
+
+function selectAmbulance(card,type){
+
+document.querySelectorAll(".type-card").forEach(c=>{
+c.classList.remove("active");
+});
+
+card.classList.add("active");
+
+document.getElementById("selectedAmbulance").value=type;
+
+}
+
+</script>
 </body>
 </html>
