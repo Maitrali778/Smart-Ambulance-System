@@ -100,6 +100,7 @@ button:hover{
     text-align:center;
 }
 
+
 .city-card img,
 .type-card img{
     width:100%;
@@ -200,10 +201,15 @@ button:hover{
 <input type="text" placeholder="Enter Patient Name" required>
 
 <label>Mobile Number</label>
-<input type="tel"
-       placeholder="Enter Mobile Number"
-       pattern="[0-9]{10}"
-       required>
+<input
+type="tel"
+id="mobile"
+placeholder="Enter Mobile Number"
+required
+maxlength="10"
+pattern="[0-9]{10}"
+inputmode="numeric"
+oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)">
 
 <label>Pickup Location</label>
 <textarea rows="3"
@@ -230,6 +236,15 @@ Submit Request
 </button>
 
 </form>
+<script>
+document.querySelector("form").addEventListener("submit", function () {
+
+    const mobile = document.querySelector('input[type="tel"]').value;
+
+    localStorage.setItem("patientMobile", mobile);
+
+});
+</script>
 
 <br>
 

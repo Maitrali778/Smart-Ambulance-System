@@ -1316,3 +1316,20 @@ box-shadow:0 8px 20px rgba(230,0,35,.35);
 transition:.3s;
 
 }
+.back-btn{
+    background:#002b5b;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    width:auto;
+    display:block;
+    margin:25px auto 0;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#004080;
+}

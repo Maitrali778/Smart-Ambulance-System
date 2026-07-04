@@ -53,10 +53,23 @@ Login
 </button>
 
 </form>
-
+<a href="index.html">
+    <button class="back-btn">Back to Home</button>
+</a>
 </div>
 
 </div>
+<script>
+window.onload = function () {
+
+    const savedMobile = localStorage.getItem("patientMobile");
+
+    if(savedMobile){
+        document.getElementById("mobile").value = savedMobile;
+    }
+
+}
+</script>
 
 </body>
 </html>
