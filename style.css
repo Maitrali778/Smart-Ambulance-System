@@ -1333,3 +1333,7 @@ transition:.3s;
 .back-btn:hover{
     background:#004080;
 }
+.check img{
+    width: 30px;
+    height: 30px;
+}
