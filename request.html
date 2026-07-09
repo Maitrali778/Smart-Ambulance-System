@@ -136,27 +136,27 @@ button:hover{
 <div class="city-container">
 
 <div class="city-card" onclick="selectCity(this,'Mumbai')">
-    <img src="mumbai.png">
+    <img src="{{ url_for('static', filename='mumbai.png') }}">
     <h3>Mumbai</h3>
 </div>
 
 <div class="city-card" onclick="selectCity(this,'Pune')">
-    <img src="pune.png">
+    <img src="{{ url_for('static', filename='pune.png') }}">
     <h3>Pune</h3>
 </div>
 
 <div class="city-card" onclick="selectCity(this,'Delhi')">
-    <img src="delhi.png">
+    <img src="{{ url_for('static', filename='delhi.png') }}">
     <h3>Delhi</h3>
 </div>
 
 <div class="city-card" onclick="selectCity(this,'Bangalore')">
-    <img src="bangalore.png">
+    <img src="{{ url_for('static', filename='bangalore.png') }}">
     <h3>Bangalore</h3>
 </div>
 
 <div class="city-card" onclick="selectCity(this,'Hyderabad')">
-    <img src="hyderabad.png">
+    <img src="{{ url_for('static', filename='hyderabad.png') }}">
     <h3>Hyderabad</h3>
 </div>
 
@@ -166,22 +166,22 @@ button:hover{
 <div class="type-container">
 
 <div class="type-card" onclick="selectAmbulance(this,'Basic Ambulance')">
-<img src="basic.png">
+<img src="{{ url_for('static', filename='basic.png') }}">
 <h3>Basic</h3>
 </div>
 
 <div class="type-card" onclick="selectAmbulance(this,'ICU Ambulance')">
-<img src="icu.png">
+<img src="{{ url_for('static', filename='icu.png') }}">
 <h3>ICU</h3>
 </div>
 
 <div class="type-card" onclick="selectAmbulance(this,'Boat Ambulance')">
-<img src="boat.png">
+<img src="{{ url_for('static', filename='boat.png') }}">
 <h3>Boat</h3>
 </div>
 
 <div class="type-card" onclick="selectAmbulance(this,'Air Ambulance')">
-<img src="air.png">
+<img src="{{ url_for('static', filename='air.png') }}">
 <h3>Air</h3>
 </div>
 
