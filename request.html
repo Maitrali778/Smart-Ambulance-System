@@ -189,7 +189,7 @@ button:hover{
 
 <h2>Request Ambulance</h2>
 
-<form action="success.html">
+<form action="{{ url_for('success') }}">
 
 <label>Selected City</label>
 <input type="text" id="selectedCity" readonly>
@@ -248,7 +248,7 @@ document.querySelector("form").addEventListener("submit", function () {
 
 <br>
 
-<a href="index.html">
+<a href="{{ url_for('home') }}">
     <button class="back-btn">
         Back To Home
     </button>

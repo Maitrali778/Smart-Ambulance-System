@@ -7,7 +7,7 @@
 
 <title>Patient Dashboard</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
 </head>
@@ -67,7 +67,7 @@
     Track Ambulance
 </button>
 
-<a href="booking-history.html">
+<a href="{{ url_for('booking_history') }}">
     <button class="action-btn">
         Booking History
     </button>
@@ -78,9 +78,6 @@
 Cancel Booking
 </button>
 </a>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 
 </div>
@@ -90,24 +87,6 @@ style="height:400px;display:none;margin-top:20px;">
 </div>
 
 </div>
-
-<script>
-function cancelBooking() {
-    let confirmCancel = confirm("Do you really want to cancel the booking?");
-
-    if (confirmCancel) {
-        alert("Your Ambulance booking has been cancelled successfully.");
-        
-        // optional UI change (demo feel)
-        document.querySelector(".status").innerText = "Cancelled";
-        document.querySelector(".status").style.background = "#ffd6d6";
-        document.querySelector(".status").style.color = "#b30000";
-    } 
-    else {
-        alert("✅ Your booking is still active.");
-    }
-}
-</script>
 <script>
 
 function cancelBooking() {
@@ -162,7 +141,7 @@ function startTracking() {
             }).addTo(map);
 
             let ambulanceIcon = L.icon({
-    iconUrl: "track.png",
+    iconUrl: "{{ url_for('static', filename='track.png') }}",
     iconSize: [45, 45],
     iconAnchor: [22, 22]
 });
@@ -224,13 +203,13 @@ setInterval(() => {
 
 }, 5000);</script>
 <script>let ambulanceIcon = L.icon({
-    iconUrl: "track.png",
+    iconUrl: "{{ url_for('static', filename='track.png') }}",
     iconSize: [45, 45],
     iconAnchor: [22, 22]
 });
 
 marker = L.marker([lat, lng], { icon: ambulanceIcon }).addTo(map);</script>
-<a href="login.html">
+<a href="{{ url_for('login') }}">
     <button class="back-btn">Back</button>
 </a>
 </body>

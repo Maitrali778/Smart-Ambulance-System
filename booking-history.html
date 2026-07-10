@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Booking History</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <style>.back-btn{
     display: block;
     width: 150px;
@@ -64,7 +64,7 @@
 </table>
 
 </div>
-<a href="patient-dashboard.html">
+<a href="{{ url_for('patient_dashboard') }}">
     <button class="back-btn">Back</button>
 </a>
 
