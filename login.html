@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Patient Login</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
@@ -21,9 +21,11 @@
 
 <p>Login to track your ambulance and manage bookings.</p>
 
-<form action="patient-dashboard.html">
+<form action="{{ url_for('patient_dashboard') }}">
 
-<input type="tel"
+<input
+type="tel"
+id="mobile"
 placeholder="Enter Mobile Number"
 required>
 
@@ -53,7 +55,7 @@ Login
 </button>
 
 </form>
-<a href="index.html">
+<a href="{{ url_for('home') }}">
     <button class="back-btn">Back to Home</button>
 </a>
 </div>

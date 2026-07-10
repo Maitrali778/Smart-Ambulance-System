@@ -27,7 +27,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#how">How It Works</a></li>
         <li><a href="#contact">Contact</a></li>
-<li><a href="admin-dashboard.html">Dashboard</a></li>    </ul>
+<li><a href="{{ url_for('admin_dashboard') }}">Dashboard</a></li>    </ul>
 
 </nav>
 
@@ -54,9 +54,9 @@ Emergency Helpline<br>
             medical assistance whenever you need it.
         </p>
 
-        <a href="request.html">
+        <a href="{{ url_for('request') }}">
     <button class="red-btn">Book Ambulance</button>
-        </a>
+</a>
         
     </div>
 
@@ -222,7 +222,7 @@ Track your booked ambulance in real-time after logging into your account.
 
 <br>
 
-<a href="login.html">
+<a href="{{ url_for('login') }}">
 <button class="red-btn">
 Login to Track Ambulance
 </button>
