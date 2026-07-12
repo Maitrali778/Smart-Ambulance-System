@@ -42,9 +42,6 @@ Amazon S3 (Simple Storage Service) is used to store project-related images and s
 
 ![S3](S3.jpeg)
 
-S3 Bucket
-An Amazon S3 Bucket is created to store project assets and files securely. It provides scalable, durable, and highly available object storage for the Smart Ambulance System.
-![bucket](bucket.jpeg)
 
 Amazon Route 53
 Amazon Route 53 is used for DNS management and routing user requests to the deployed Smart Ambulance System.
