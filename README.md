@@ -26,3 +26,9 @@ Technologies Used
 AWS Architecture Overview
 
 ![AWS Architecture](Architecture.jpeg)
+
+ Amazon EC2
+
+Amazon EC2 (Elastic Compute Cloud) is used to host the Smart Ambulance System application. It provides a scalable virtual server environment to run the web application efficiently.
+
+![EC2](EC2.jpng)
