@@ -5,11 +5,11 @@ A cloud-based ambulance management system that helps users request ambulances qu
 
  Features
 
-- 🚑 Ambulance Request
-- 📍 Live Tracking
-- 🏥 Hospital Dashboard
-- 🔔 Emergency Notifications
-- ☁️ AWS Cloud Integration
+- Ambulance Request
+- Live Tracking
+- Hospital Dashboard
+- Emergency Notifications
+- AWS Cloud Integration
 
 Technologies Used
 
@@ -21,6 +21,8 @@ Technologies Used
 - Amazon S3
 - Amazon SNS
 - Amazon DynamoDB
+
+
 AWS Architecture Overview
 
 ![AWS Architecture](Architecture.jpeg)
